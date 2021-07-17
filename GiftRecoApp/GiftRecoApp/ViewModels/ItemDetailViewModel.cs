@@ -12,6 +12,7 @@ namespace GiftRecoApp.ViewModels
         private string itemId;
         private string text;
         private string description;
+        private string[] tags;
         public string Id { get; set; }
 
         public string Text
@@ -24,6 +25,12 @@ namespace GiftRecoApp.ViewModels
         {
             get => description;
             set => SetProperty(ref description, value);
+        }
+
+        public string[] Tags
+        {
+            get => tags;
+            set => SetProperty(ref tags, value);
         }
 
         public string ItemId
@@ -47,6 +54,7 @@ namespace GiftRecoApp.ViewModels
                 Id = item.Id;
                 Text = item.Text;
                 Description = item.Description;
+                Tags = item.Tags;
             }
             catch (Exception)
             {

@@ -11,6 +11,7 @@ namespace GiftRecoApp.ViewModels
     {
         private string text;
         private string description;
+        private string[] tags;
 
         public NewItemViewModel()
         {
@@ -38,6 +39,12 @@ namespace GiftRecoApp.ViewModels
             set => SetProperty(ref description, value);
         }
 
+        public string[] Tags
+        {
+            get => tags;
+            set => SetProperty(ref tags, value);
+        }
+
         public Command SaveCommand { get; }
         public Command CancelCommand { get; }
 
@@ -53,7 +60,8 @@ namespace GiftRecoApp.ViewModels
             {
                 Id = Guid.NewGuid().ToString(),
                 Text = Text,
-                Description = Description
+                Description = Description,
+                Tags = Tags
             };
 
             await DataStore.AddItemAsync(newItem);

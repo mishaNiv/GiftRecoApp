@@ -10,20 +10,20 @@ namespace GiftRecoApp.ViewModels
 {
     public class ItemsViewModel : BaseViewModel
     {
-        private Item _selectedItem;
+        private ItemViewModel _selectedItem;
 
-        public ObservableCollection<Item> Items { get; }
+        public ObservableCollection<ItemViewModel> Items { get; }
         public Command LoadItemsCommand { get; }
         public Command AddItemCommand { get; }
-        public Command<Item> ItemTapped { get; }
+        public Command<ItemViewModel> ItemTapped { get; }
 
         public ItemsViewModel()
         {
             Title = "Browse";
-            Items = new ObservableCollection<Item>();
+            Items = new ObservableCollection<ItemViewModel>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
-            ItemTapped = new Command<Item>(OnItemSelected);
+            ItemTapped = new Command<ItemViewModel>(OnItemSelected);
 
             AddItemCommand = new Command(OnAddItem);
         }
@@ -38,7 +38,7 @@ namespace GiftRecoApp.ViewModels
                 var items = await DataStore.GetItemsAsync(true);
                 foreach (var item in items)
                 {
-                    Items.Add(item);
+                    Items.Add(new ItemViewModel(item));
                 }
             }
             catch (Exception ex)
@@ -57,7 +57,7 @@ namespace GiftRecoApp.ViewModels
             SelectedItem = null;
         }
 
-        public Item SelectedItem
+        public ItemViewModel SelectedItem
         {
             get => _selectedItem;
             set
@@ -72,13 +72,13 @@ namespace GiftRecoApp.ViewModels
             await Shell.Current.GoToAsync(nameof(NewItemPage));
         }
 
-        async void OnItemSelected(Item item)
+        async void OnItemSelected(ItemViewModel item)
         {
             if (item == null)
                 return;
 
             // This will push the ItemDetailPage onto the navigation stack
-            await Shell.Current.GoToAsync($"{nameof(ItemDetailPage)}?{nameof(ItemDetailViewModel.ItemId)}={item.Id}");
+            await Shell.Current.GoToAsync($"{nameof(ItemDetailPage)}?{nameof(ItemDetailViewModel.ItemId)}={item.RealItem.Id}");
         }
     }
 }
