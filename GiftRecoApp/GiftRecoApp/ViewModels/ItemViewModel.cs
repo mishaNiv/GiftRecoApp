@@ -24,7 +24,7 @@ namespace GiftRecoApp.ViewModels
             
             foreach(String s in item.Tags)
             {
-                tags += "#" + s;
+                tags += "#" + s + ",";
             }
 
             tags = tags.Remove(tags.Length - 1, 1);
