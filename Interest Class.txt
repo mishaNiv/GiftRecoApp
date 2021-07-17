@@ -1,0 +1,23 @@
+﻿Variables
+	- String interest
+
+Files
+	- InterestSelectionView
+		○ Design of Interest selection checklist
+		○ Collection of InterestViewModel
+		○ For every InterestViewModel - checkbox, string interest
+		○ Copy from ItemsView
+	- InterestSelectionViewModel
+		○ Logic for Interest selection checklist
+		○ add() and remove()
+		○ When user clicks Interest, add or remove interest from Interest[] 
+		○ Copy from ItemsViewModel
+	- InterestViewModel (currently optional)
+		○ Design for how Interests are viewed on app pages
+		○ Print out string interest
+		○ Copy from ItemViewModel
+	- Interest
+		○ Class of Interests
+		○ 1 variable - string interest
+		○ Accessor method - get()
+		○ Copy from Item
