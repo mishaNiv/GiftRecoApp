@@ -1,0 +1,7 @@
+Use item class to show gifts
+Gift recommendation class - method called gift recommmendation - take interest array and returns item array 
+service class - generic
+need to show list of items 
+create filter method 
+only call filtered items and return those items view
+use tags as filters 

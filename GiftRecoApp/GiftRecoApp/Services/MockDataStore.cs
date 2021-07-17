@@ -14,12 +14,12 @@ namespace GiftRecoApp.Services
         {
             items = new List<Item>()
             {
-                new Item { Id = Guid.NewGuid().ToString(), Text = "First item", Description="This is an item description.", Tags = new string[]{"a", "b", "c" }},
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Second item", Description="This is an item description.", Tags = new string[]{"a", "b", "c" }},
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Third item", Description="This is an item description.", Tags = new string[]{"a", "b", "c" }},
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Fourth item", Description="This is an item description.", Tags = new string[]{"a", "b", "c" }},
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Fifth item", Description="This is an item description.", Tags = new string[]{"a", "b", "c" }},
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Sixth item", Description="This is an item description.", Tags = new string[]{"a", "b", "c" }},
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Basketball", Description="This is an item description.", Tags = new string[]{"Sports" }},
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Leggings", Description="This is an item description.", Tags = new string[]{"Fashion" }},
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Lego Set", Description="This is an item description.", Tags = new string[]{"Entertainment" }},
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Rings", Description="This is an item description.", Tags = new string[]{"Fashion" }},
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Jumanji", Description="This is an item description.", Tags = new string[]{"Entertainment" }},
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Swim Goggles", Description="This is an item description.", Tags = new string[]{"Sports" }},
             };
         }
 

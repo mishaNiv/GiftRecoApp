@@ -7,10 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GiftRecoApp.Android", "Gift
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GiftRecoApp.iOS", "GiftRecoApp\GiftRecoApp.iOS\GiftRecoApp.iOS.csproj", "{4C9B83E0-87CA-4269-9B04-324800975389}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GiftRecoApp", "GiftRecoApp\GiftRecoApp\GiftRecoApp.csproj", "{72602B11-B1E6-46FA-9567-481925E7E5A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GiftRecoApp", "GiftRecoApp\GiftRecoApp\GiftRecoApp.csproj", "{72602B11-B1E6-46FA-9567-481925E7E5A2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notes", "Notes", "{029A6CC4-E646-4AB0-8CC1-93A325E2A842}"
 	ProjectSection(SolutionItems) = preProject
+		Gift Recommendation.txt = Gift Recommendation.txt
 		Interest Class.txt = Interest Class.txt
 	EndProjectSection
 EndProject
