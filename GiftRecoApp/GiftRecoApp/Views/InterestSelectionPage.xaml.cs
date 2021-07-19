@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using GiftRecoApp.Models;
 
 namespace GiftRecoApp.Views
 {
@@ -13,6 +14,8 @@ namespace GiftRecoApp.Views
     public partial class InterestSelectionPage : ContentPage
     {
         public ObservableCollection<string> Items { get; set; }
+        
+        private int selectedCount = 0;
 
         public InterestSelectionPage()
         {
@@ -28,6 +31,9 @@ namespace GiftRecoApp.Views
             };
 
             MyListView.ItemsSource = Items;
+
+            CheckBox cb = new CheckBox();
+            cb.IsChecked = false;
         }
 
         async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
@@ -39,6 +45,16 @@ namespace GiftRecoApp.Views
 
             //Deselect Item
             ((ListView)sender).SelectedItem = null;
+        }
+
+        private void CheckBox_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            if (e.Value == false)
+                this.selectedCount--;
+            else
+                this.selectedCount++;
+
+            lbl_selectedCount.Text = "Interests selected: " + this.selectedCount;
         }
     }
 }

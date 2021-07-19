@@ -85,6 +85,7 @@
         <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:ItemsPage}" />
     </FlyoutItem>
 
+    <!-- TODO: delete code below to remove Interests from fly-out menu -->
     <FlyoutItem Title="Interests" Icon="icon_feed.png">
         <ShellContent Route="InterestSelectionPage" ContentTemplate="{DataTemplate local:InterestSelectionPage}" />
     </FlyoutItem>

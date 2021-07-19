@@ -9,21 +9,19 @@ namespace GiftRecoApp.ViewModels
 {
     public class InterestSelectionViewModel : BaseViewModel
     {
-        private Interest _interest;
+        public Interest _interest;
+        public Interest[] selectedInterests = new Interest[3];
+        public string interests;
 
-        private string interest;
-
-        public InterestSelectionViewModel(Interest pInterest)
+        public InterestSelectionViewModel()
         {
-            this._interest = pInterest;
-
-            interest = _interest.interest;
+            
         }
 
-        public string mainInterest
+        public Interest[] Interests
         {
-            get => interest;
-            set => SetProperty(ref interest, value);
+            get => selectedInterests;
+            set => SetProperty(ref selectedInterests, value);
         }
     }
 }
