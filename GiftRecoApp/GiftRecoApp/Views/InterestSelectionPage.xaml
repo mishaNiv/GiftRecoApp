@@ -30,7 +30,7 @@
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                                 <ColumnDefinition Width="2*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <CheckBox IsChecked="False" CheckedChanged="CheckBox_CheckedChanged" Grid.Column="0"/>
+                            <CheckBox x:Name="{Binding Items}" IsChecked="False" CheckedChanged="CheckBox_CheckedChanged" Grid.Column="0"/>
                             <Label Text="{Binding .}" 
                                    Style="{DynamicResource ListItemTextStyle}" 
                                    Grid.Column="1"/>
@@ -41,6 +41,5 @@
         </ListView.ItemTemplate>
     </ListView>
     <Label x:Name="lbl_selectedCount" Text="helo"/>
-       
     </StackLayout>
 </ContentPage>

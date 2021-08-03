@@ -10,12 +10,50 @@ namespace GiftRecoApp.ViewModels
     public class InterestSelectionViewModel : BaseViewModel
     {
         public Interest _interest;
-        public Interest[] selectedInterests = new Interest[3];
+        public static Interest[] selectedInterests = new Interest[3];
         public string interests;
 
         public InterestSelectionViewModel()
         {
+            int i = 0;
+        }
+
+        public static string ISViewModel(object sndr, CheckedChangedEventArgs e)
+        {
+            CheckBox cb = (CheckBox)sndr;
+            int tCount = 0;
+            int arrCount = 0;
+            Interest[] temp = new Interest[selectedInterests.Length - 1];
+            string sReturn = "";
+
+            if (e.Value == false)
+            {
+                for (int i = 0; i < selectedInterests.Length - 1; i++)
+                {
+                    if (selectedInterests[i].interest.Equals((string)cb.BindingContext))
+                    {
+                        continue;                        
+                    }
+                    else
+                    {
+                        temp[tCount] = selectedInterests[i];
+                        tCount++;
+                    }
+                }
+
+                selectedInterests = temp;
+            }
+            else
+            {
+                selectedInterests[arrCount] = new Interest((string)cb.BindingContext);
+                arrCount++;
+            }
             
+            for (int i = 0; i < selectedInterests.Length - 1; i++)
+            {
+                sReturn += selectedInterests[i].interest;
+            }
+                return sReturn;
         }
 
         public Interest[] Interests

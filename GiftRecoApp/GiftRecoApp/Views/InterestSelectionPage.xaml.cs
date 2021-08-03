@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using GiftRecoApp.Models;
+using GiftRecoApp.ViewModels;
 
 namespace GiftRecoApp.Views
 {
@@ -17,9 +18,13 @@ namespace GiftRecoApp.Views
         
         private int selectedCount = 0;
 
+        private Interest[] temp = new Interest[3];
+
         public InterestSelectionPage()
         {
             InitializeComponent();
+
+            //InterestSelectionViewModel isvm = this.get
 
             Items = new ObservableCollection<string>
             {
@@ -32,8 +37,8 @@ namespace GiftRecoApp.Views
 
             MyListView.ItemsSource = Items;
 
-            CheckBox cb = new CheckBox();
-            cb.IsChecked = false;
+            //CheckBox cb = new CheckBox();
+            //cb.IsChecked = false;
         }
 
         async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
@@ -49,12 +54,24 @@ namespace GiftRecoApp.Views
 
         private void CheckBox_CheckedChanged(object sender, CheckedChangedEventArgs e)
         {
-            if (e.Value == false)
-                this.selectedCount--;
-            else
-                this.selectedCount++;
+            string testArr = InterestSelectionViewModel.ISViewModel(sender, e);
 
-            lbl_selectedCount.Text = "Interests selected: " + this.selectedCount;
+            //CheckBox cb = (CheckBox)sender;
+
+            //if (e.Value == false)
+            //{
+            //this.selectedCount--;
+            //}
+            //else
+            //{
+            //this.selectedCount++;
+            //}
+
+            //string bc = (string)cb.BindingContext;
+
+            lbl_selectedCount.Text = testArr;
+
+            
         }
     }
 }

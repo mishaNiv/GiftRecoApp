@@ -21,3 +21,11 @@ Files
 		○ 1 variable - string interest
 		○ Accessor method - get()
 		○ Copy from Item
+
+
+INTERESTSELECTIONPAGE and INTERESTSELECTIONVIEWMODEL changes	
+	- connect ISP.xaml to ISVM properly (see ItemsPage.xaml)
+	- onCheckboxChanged() - look for this.BindingContext - in ISVM
+	- call instance method on ISVM in ISP
+
+	- 
