@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows.Input;
 using GiftRecoApp.Models;
@@ -13,9 +14,19 @@ namespace GiftRecoApp.ViewModels
         public static Interest[] selectedInterests = new Interest[3];
         public string interests;
 
+        public ObservableCollection<string> Items { get; set; }
+
+
         public InterestSelectionViewModel()
         {
-            int i = 0;
+            Items = new ObservableCollection<string>
+            {
+                "Item 1",
+                "Item 2",
+                "Item 3",
+                "Item 4",
+                "Item 5"
+            };
         }
 
         public static string ISViewModel(object sndr, CheckedChangedEventArgs e)

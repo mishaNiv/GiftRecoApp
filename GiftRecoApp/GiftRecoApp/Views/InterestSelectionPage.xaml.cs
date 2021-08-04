@@ -14,31 +14,15 @@ namespace GiftRecoApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class InterestSelectionPage : ContentPage
     {
-        public ObservableCollection<string> Items { get; set; }
-        
-        private int selectedCount = 0;
-
-        private Interest[] temp = new Interest[3];
+        private InterestSelectionViewModel _viewModel;
 
         public InterestSelectionPage()
         {
             InitializeComponent();
 
-            //InterestSelectionViewModel isvm = this.get
+            BindingContext = _viewModel = new InterestSelectionViewModel();
 
-            Items = new ObservableCollection<string>
-            {
-                "Item 1",
-                "Item 2",
-                "Item 3",
-                "Item 4",
-                "Item 5"
-            };
-
-            MyListView.ItemsSource = Items;
-
-            //CheckBox cb = new CheckBox();
-            //cb.IsChecked = false;
+s            MyListView.ItemsSource = _viewModel.Items;
         }
 
         async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
