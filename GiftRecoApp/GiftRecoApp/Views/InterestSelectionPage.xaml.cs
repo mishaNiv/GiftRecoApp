@@ -22,40 +22,12 @@ namespace GiftRecoApp.Views
 
             BindingContext = _viewModel = new InterestSelectionViewModel();
 
-s            MyListView.ItemsSource = _viewModel.Items;
+            MyListView.ItemsSource = _viewModel.Items;
         }
-
-        async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
-        {
-            if (e.Item == null)
-                return;
-
-            await DisplayAlert("Item Tapped", "An item was tapped.", "OK");
-
-            //Deselect Item
-            ((ListView)sender).SelectedItem = null;
-        }
-
         private void CheckBox_CheckedChanged(object sender, CheckedChangedEventArgs e)
         {
-            string testArr = InterestSelectionViewModel.ISViewModel(sender, e);
-
-            //CheckBox cb = (CheckBox)sender;
-
-            //if (e.Value == false)
-            //{
-            //this.selectedCount--;
-            //}
-            //else
-            //{
-            //this.selectedCount++;
-            //}
-
-            //string bc = (string)cb.BindingContext;
-
+            string testArr = this._viewModel.OnCheckedChanged(sender, e);
             lbl_selectedCount.Text = testArr;
-
-            
         }
     }
 }

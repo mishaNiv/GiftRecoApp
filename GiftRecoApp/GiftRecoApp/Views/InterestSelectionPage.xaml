@@ -34,7 +34,7 @@
                                 <ColumnDefinition Width="2*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
                             <CheckBox x:Name="{Binding Items}" IsChecked="False" CheckedChanged="CheckBox_CheckedChanged" Grid.Column="0"/>
-                            <Label Text="{Binding .}" 
+                            <Label Text="{Binding Items}" 
                                    Style="{DynamicResource ListItemTextStyle}" 
                                    Grid.Column="1"/>
                         </Grid>

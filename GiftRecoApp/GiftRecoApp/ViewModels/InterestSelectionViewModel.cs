@@ -29,9 +29,15 @@ namespace GiftRecoApp.ViewModels
             };
         }
 
-        public static string ISViewModel(object sndr, CheckedChangedEventArgs e)
+        public Interest[] Interests
         {
-            CheckBox cb = (CheckBox)sndr;
+            get => selectedInterests;
+            set => SetProperty(ref selectedInterests, value);
+        }
+
+        public string OnCheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            CheckBox cb = (CheckBox)sender;
             int tCount = 0;
             int arrCount = 0;
             Interest[] temp = new Interest[selectedInterests.Length - 1];
@@ -43,7 +49,7 @@ namespace GiftRecoApp.ViewModels
                 {
                     if (selectedInterests[i].interest.Equals((string)cb.BindingContext))
                     {
-                        continue;                        
+                        continue;
                     }
                     else
                     {
@@ -59,18 +65,13 @@ namespace GiftRecoApp.ViewModels
                 selectedInterests[arrCount] = new Interest((string)cb.BindingContext);
                 arrCount++;
             }
-            
+
             for (int i = 0; i < selectedInterests.Length - 1; i++)
             {
                 sReturn += selectedInterests[i].interest;
             }
-                return sReturn;
-        }
 
-        public Interest[] Interests
-        {
-            get => selectedInterests;
-            set => SetProperty(ref selectedInterests, value);
+            return sReturn;
         }
     }
 }
